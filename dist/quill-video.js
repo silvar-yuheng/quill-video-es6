@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7489098be729c6066601";
+/******/ 	var hotCurrentHash = "df539d698be69ff018bf";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -972,7 +972,7 @@ class src_VideoModel extends Module {
     } = this.options;
 
     if (upload && typeof upload === 'function') {
-      upload();
+      upload(files);
     } else {
       console.error('上传视频方法未定义');
     }
