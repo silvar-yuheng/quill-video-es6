@@ -1,6 +1,6 @@
 {
   "name": "quill-video-es6",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/quill-video.js",
   "scripts": {

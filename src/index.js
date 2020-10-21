@@ -29,7 +29,7 @@ export default class VideoModel extends Module {
         let input = document.createElement('input');
         input.type = 'file';
         input.accept =
-            '.mp4,.flv,.f4v,.webm,.m4v,.mov,.3gp,.3g2,.rm,.rmvb,.wmv,.avi,.asf,.mpg,.mpeg,.mpe,.ts,.div,.dv,.divx,.vob,.dat,.mkv,.swf,.lavf,.cpk,.dirac,.ram,.qt,.fli,.flc,.mod,.ogv';
+            '.mp4,.flv,.f4v,.webm,.m4v,.mov,.3gp,.3g2,.rm,.rmvb,.wmv,.avi,.asf,.mpg,.mpeg,.mpe,.ts,.div,.dv,.divx,.vob,.dat,.mkv,.swf,.lavf,.cpk,.dirac,.ram,.qt,.fli,.flc,.mod,.ogv,.ogg';
         input.id = INPUT_ID;
         input.style.display = 'none';
         input.addEventListener('change', event => {
@@ -39,8 +39,12 @@ export default class VideoModel extends Module {
         input = undefined;
     }
     uploadVideo(files) {
-        console.log(files);
-        this.insert('https://www.w3school.com.cn/i/movie.ogg');
+        const { upload } = this.options;
+        if (upload && typeof upload === 'function') {
+            upload();
+        } else {
+            console.error('上传视频方法未定义');
+        }
     }
 
     insert(url) {
@@ -53,6 +57,6 @@ export default class VideoModel extends Module {
             width: '30%',
             height: '30%',
         });
-        // this.quill.insertEmbed(addRange !== null ? addRange.index : 0, 'video', url);
+        document.getElementById(INPUT_ID).value = '';
     }
 }
