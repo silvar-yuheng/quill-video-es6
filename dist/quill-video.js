@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "df539d698be69ff018bf";
+/******/ 	var hotCurrentHash = "e8ed1b2f3b3178915bc0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -973,6 +973,7 @@ class src_VideoModel extends Module {
 
     if (upload && typeof upload === 'function') {
       upload(files);
+      document.getElementById(INPUT_ID).value = '';
     } else {
       console.error('上传视频方法未定义');
     }
@@ -988,7 +989,6 @@ class src_VideoModel extends Module {
       width: '30%',
       height: '30%'
     });
-    document.getElementById(INPUT_ID).value = '';
   }
 
 }
