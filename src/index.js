@@ -41,7 +41,7 @@ export default class VideoModel extends Module {
     uploadVideo(files) {
         const { upload } = this.options;
         if (upload && typeof upload === 'function') {
-            upload();
+            upload(files);
         } else {
             console.error('上传视频方法未定义');
         }
